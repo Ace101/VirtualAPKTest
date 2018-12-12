@@ -1,0 +1,1 @@
+include ':app', ':plugindemo', ':arouter_base', ':communication', ':communication', ':plugindemo2'
