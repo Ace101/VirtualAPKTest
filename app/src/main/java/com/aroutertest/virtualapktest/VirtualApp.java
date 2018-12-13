@@ -5,10 +5,6 @@ import android.content.Context;
 
 import com.didi.virtualapk.PluginManager;
 
-/**
- * @author zhangshihao
- * @date 2018/12/7 0007
- */
 public class VirtualApp extends Application {
 
     private boolean isDebugARouter = true;
