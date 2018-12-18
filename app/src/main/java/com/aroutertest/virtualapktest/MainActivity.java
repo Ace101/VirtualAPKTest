@@ -3,8 +3,10 @@ package com.aroutertest.virtualapktest;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tv_jump, tv_jump2;
     RxPermissions rxPermission;
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @SuppressLint("CheckResult")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,23 +61,16 @@ public class MainActivity extends AppCompatActivity {
         info.setUserAge("18");
         BeanManager.initUserInfo(info);
 
-        tv_jump.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClassName("com.aroutertest.virtualapktest", "com.aroutertest.plugindemo.PluginActivity");
-                startActivity(intent);
-            }
+        tv_jump.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setClassName("com.aroutertest.virtualapktest", "com.aroutertest.plugindemo.PluginActivity");
+            startActivity(intent);
         });
 
-        tv_jump2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClassName("com.aroutertest.virtualapktest", "com.aroutertest.plugindemo2.PluginActivity2");
-                startActivity(intent);
-            }
+        tv_jump2.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setClassName("com.aroutertest.virtualapktest", "com.aroutertest.plugindemo2.PluginActivity2");
+            startActivity(intent);
         });
     }
 
