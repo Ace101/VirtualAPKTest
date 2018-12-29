@@ -45,7 +45,7 @@ virtualApk {
     // 插件资源表中的packageId，需要确保不同插件有不同的packageId.
     packageId = 0x6f             // The package id of Resources.
     // 宿主工程application模块的路径，插件的构建需要依赖这个路径
-    targetHost = 'F:/AsTest/VirtualAPKTest/app' // The path of application module in host project.
+    targetHost = '../VirtualAPKTest/app' // The path of application module in host project.
     //默认为true，如果插件有引用宿主的类，那么这个选项可以使得插件和宿主保持混淆一致
     applyHostMapping = true      // [Optional] Default value is true.
 }
